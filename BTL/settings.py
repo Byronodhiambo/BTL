@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['b-t-l.herokuapp.com', '127.0.0.1']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
