@@ -13,7 +13,13 @@ router.register('gallery', views.GalleryViewSets, basename='events')
 app_name = 'be_the_leader'
 
 urlpatterns = [
-    path('viewset/', include(router.urls)),
-    path('viewset/<int:pk>', include(router.urls)),
+    # path('viewset/', include(router.urls)),
+    # path('viewset/<int:pk>', include(router.urls)),
+    path('', views.index, name='index'),
+    path('', views.about, name='about'),
+    path('', views.what_we_do, name='what_we_dot'),
+    path('', views.gallery, name='gallery'),
+    path('', views.contact, name='contact'),
+
 
 ]
