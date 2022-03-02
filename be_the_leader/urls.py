@@ -16,10 +16,10 @@ urlpatterns = [
     # path('viewset/', include(router.urls)),
     # path('viewset/<int:pk>', include(router.urls)),
     path('', views.index, name='index'),
-    path('', views.about, name='about'),
-    path('', views.what_we_do, name='what_we_dot'),
-    path('', views.gallery, name='gallery'),
-    path('', views.contact, name='contact'),
+    path('about/', views.about, name='about'),
+    path('what_we_do/', views.what_we_do, name='what_we_do'),
+    path('gallery/', views.gallery, name='gallery'),
+    path('contact/', views.contact, name='contact'),
 
 
 ]
