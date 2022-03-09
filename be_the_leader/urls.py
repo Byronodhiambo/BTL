@@ -4,11 +4,6 @@ from django.urls import path, include
 from . import views
 from rest_framework.routers import DefaultRouter
 
-router = DefaultRouter()
-router.register('events', views.EventsViewSets, basename='events')
-router.register('partner', views.PartnerViewSets, basename='partner')
-router.register('gallery', views.GalleryViewSets, basename='events')
-
 
 app_name = 'be_the_leader'
 

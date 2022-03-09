@@ -1,36 +1,15 @@
 from django.shortcuts import render
-from .models import Events,Partner,Gallery
-from rest_framework import viewsets
-from .serializers import EventsSerializer, PartnerSerializer, GallerySerializer
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import TokenAuthentication
+from .models import Events,Partner,Gallery,WhatWeDo
 from django.http import HttpResponse
+import datetime
 
 # Create your views here.
 
 
-
-class EventsViewSets(viewsets.ModelViewSet):
-    authentication_classes = [TokenAuthentication]
-    permisssion_classes = [IsAuthenticated]
-    serializer_class = EventsSerializer
-    queryset  = Events.objects.all()
-
-class PartnerViewSets(viewsets.ModelViewSet):
-    authentication_classes = [TokenAuthentication]
-    permisssion_classes = [IsAuthenticated]
-    serializer_class = PartnerSerializer
-    queryset  = Partner.objects.all()
-
-class GalleryViewSets(viewsets.ModelViewSet):
-    authentication_classes = [TokenAuthentication]
-    permisssion_classes = [IsAuthenticated]
-    serializer_class = GallerySerializer
-    queryset  = Gallery.objects.all()
-
-
 def index(request):
-    return render(request, 'be_the_leader/index.html')
+    # events = Events.objects.all()
+    # current_time = datetime.datetime.now()
+    return render(request, 'be_the_leader/index.html')#{'events':events, 'current_time':current_time}
 
 def about(request):
     return render(request, 'be_the_leader/about.html')
