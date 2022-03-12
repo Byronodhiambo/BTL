@@ -40,7 +40,7 @@ Contact us
       </div>
       <div class="col-lg-7 col-md-8">
         <div class="contact-form">
-          <form class='form' id='contact-form' method='post' data-toggle='validator'>
+          <form class='form' id='contact-form' method='post' action="{%url 'be_the_leader:Contact'%}" data-toggle='validator'>
             <input type='hidden' name='form-name' value='contact-form' />
             <div class="messages"></div>
             <div class="controls">
@@ -76,11 +76,6 @@ Contact us
           </form>
         </div>
       </div>
-
-
-
-
-
 
       <div class="container">
         <div class="row">

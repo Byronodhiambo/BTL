@@ -1,4 +1,6 @@
+import email
 from site import addsitedir
+from unicodedata import name
 from xml.parsers.expat import model
 from django.db import models
 
@@ -27,3 +29,10 @@ class WhatWeDo(models.Model):
     category = models.CharField(max_length=100)
     content = models.TextField()
     added_on = models.DateTimeField(auto_created=True)
+
+class Message(models.Model):
+    name = models.CharField(max_length=100)
+    email  = models.EmailField()
+    subject =  models.CharField(max_length=100)
+    content = models.TextField()
+    date_added = models.DateTimeField(auto_created=True)

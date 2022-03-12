@@ -1,15 +1,16 @@
 from django.shortcuts import render
-from .models import Events,Partner,Gallery,WhatWeDo
+from .models import Events, Message,Partner,Gallery,WhatWeDo
 from django.http import HttpResponse
 import datetime
+from .forms import MessageForm
 
 # Create your views here.
 
 
 def index(request):
-    # events = Events.objects.all()
-    # current_time = datetime.datetime.now()
-    return render(request, 'be_the_leader/index.html')#{'events':events, 'current_time':current_time}
+    events = Events.objects.all()
+    current_time = datetime.datetime.now()
+    return render(request, 'be_the_leader/index.html',{'events':events, 'current_time':current_time})#
 
 def about(request):
     return render(request, 'be_the_leader/about.html')
@@ -21,4 +22,17 @@ def gallery(request):
     return render(request, 'be_the_leader/gallery.html')
 
 def contact(request):
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            content = form.cleaned_data['content']
+
+            data = Message(name=name, email=email, subject=subject, content=content)
+            data.save()
+
+
     return render(request, 'be_the_leader/contact.html')
