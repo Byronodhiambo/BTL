@@ -41,7 +41,7 @@ Contact us
       <div class="col-lg-7 col-md-8">
         <div class="contact-form">
           
-          <form class='form' id='contact-form' method='post' action="" data-toggle='validator'>
+          <form class='form' id='contact-form' method='post' action="{% url 'be_the_leader:feedback'%}" data-toggle='validator'>
             {% csrf_token %}
             <input type='hidden' name='form-name' value='contact-form' />
             <div class="messages"></div>

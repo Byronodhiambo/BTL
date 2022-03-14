@@ -35,4 +35,4 @@ class Message(models.Model):
     email  = models.EmailField()
     subject =  models.CharField(max_length=100)
     content = models.TextField()
-    date_added = models.DateTimeField(auto_created=True)
+    date_added = models.DateTimeField(auto_created=True, null=True )
