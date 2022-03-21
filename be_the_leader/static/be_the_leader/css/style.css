@@ -567,3 +567,18 @@ h6 {
 	padding: 150px 0px 100px;
 }
 }
+
+
+.thanks{
+	padding: 150px 0px 100px;
+	position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100% !important;
+    background:rgba(255,255,255,0.5);
+}
